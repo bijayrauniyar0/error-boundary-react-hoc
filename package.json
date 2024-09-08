@@ -1,10 +1,10 @@
 {
-  "name": "npm-starter-kit-vite",
+  "name": "error-boundary-react",
   "version": "1.0.0",
   "private": false,
   "license": "MIT",
-  "description": "Description of package",
-  "repository": "Repository URL",
+  "description": "An error boundary component for React, thats prevents the entire application from crashing when an error occurs.",
+  "repository": "https://github.com/bijayrauniyar0/error-boundary-react.git",
   "author": {
     "name": "Bijay Rauniyar",
     "email": "examplee@gmail.com",
