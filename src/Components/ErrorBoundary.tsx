@@ -40,13 +40,10 @@ class ErrorBoundary extends Component<Props, State> {
     if (this.state.hasError) {
       // Render custom error UI, including the file and component name from the stack trace
       return (
-        <div style={{borderRadius: "2rem", padding:"2rem", backgroundColor: "#ad2b327c"}}>
-          <h1 style={{color:"rgb(197, 22, 22)"}}>Something went wrong.</h1>
-          {/* <p>
-            <strong>Error:</strong> {this.state.errorMessage}
-          </p> */}
-          <p style={{color:"rgb(197, 22, 22)"}}>
-            <strong>At</strong> {this.state.componentStack}
+        <div style={{borderRadius: "1rem", padding:"2rem", backgroundColor: "#ca4b5157", width:"80%", margin:"0 auto", display: "flex",flexDirection:"column", justifyContent: "center", alignItems:"center"}}>
+          <h1 style={{color:"rgb(255, 0, 0)", fontSize: "1rem", fontWeight:"bold"}}>Something went wrong.</h1>
+          <p style={{color:"rgb(255, 0, 0)"}}>
+            <strong>Component:</strong> {this.state.componentStack?.split(")")[0]})
           </p>
         </div>
       );
