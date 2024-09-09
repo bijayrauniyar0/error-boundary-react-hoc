@@ -1,1 +1,2 @@
-export {default as DemoComponent} from './Components/ErrorBoundary';
+export {default as ErrorBoundary} from './Components/ErrorBoundary';
+export {default as hasErrorBoundary} from './Components/hasErrorBoundary';
