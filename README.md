@@ -1,58 +1,65 @@
-# NPM package starter kit with VITE + REACT
+# Error Boundary React with HOC
 
-Welcome to my NPM Package starter kit! 🚀 This kit is designed to help you skip the repetitive setup process and dive straight into building your library and publish it in NPM registery. 
+Welcome to Error Boundary React HOC. This package provides you with ErrorBoundary and hasErrorBoundary. hasErrorBoundary is a high order component. Example usage of both approach is provided below. 
 
-## Installation
 
-1. **Clone the repository:**
+#### Using yarn
 
 ```bash
-   git clone https://github.com/bijayrauniyar0/npm-starter-kit-vite.git
-   cd npm-starter-kit-vite
-```
-2. **Install dependencies:**
-```bash
-    npm install
+yarn add error-boundary-react-hoc
 
 ```
 
-## Creating Library
+#### Using npm
 
-**1.** Create a file with .tsx extension in Components
-**2.** Build a component in the corresponding file
-**3.** Import the file in index.ts and export it again.
+npm i error-boundary-react-hoc
 
-### Example to export 
+## Example Usage
+
+Here is the example usage of using errorBoundary
+
+### Approach 1
+
+You can wrap the component inside Error Boundary.
 
 ```jsx
+import React from 'react';
+import {ErrorBoundary} from 'error-boundary-react-hoc;
+import MyComponent from './MyComponent';
 
-export {default as DemoComponent} from './Components/index';
+function App() {
+  return (
+    <ErrorBoundary>
+      <MyComponent />
+    </ErrorBoundary>
+  );
+}
 
-```
-
-## Publishing
-
-#### Build
-
-```bash
-npm run build
-
-```
-#### NPM Login
-
-```bash
-npm login
+export default App;
 
 ```
 
-#### Publishing
+### Approach 2
 
-```bash 
-npm publish
+You can use hasErrorBoundary, which is a high order component. HOC lets you wrap the component while export
+
+```jsx
+import React from 'react';
+import {hasErrorBoundary} from 'error-boundary-react-hoc;
+
+function MyComponent() {
+  return (
+    <div> hello</div>
+  );
+}
+
+export default hasErrorBoundary(MyComponent);
+
 
 ```
 
 ## Contributing
+
 If you have suggestions or improvements, feel free to open an issue or submit a pull request. Contributions are welcome!
 
 ## License
