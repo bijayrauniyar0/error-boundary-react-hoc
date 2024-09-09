@@ -1,6 +1,6 @@
 {
   "name": "error-boundary-react-hoc",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "private": false,
   "license": "MIT",
   "description": "An error boundary component for React, thats prevents the entire application from crashing when an error occurs.",
