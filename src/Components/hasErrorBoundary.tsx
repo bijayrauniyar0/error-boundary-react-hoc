@@ -1,14 +1,18 @@
 import React from 'react';
 import ErrorBoundary from './ErrorBoundary';
 
-const hasErrorBoundary = (WrappedComponent: React.ComponentType) => {
-  return function WrappedWithErrorBoundary(props: any) {
-    return (
-      <ErrorBoundary>
-        <WrappedComponent {...props} />
-      </ErrorBoundary>
-    );
-  };
-};
-
-export default hasErrorBoundary;
+function hasErrorBoundary<T>(
+    WrappedComponent: React.ComponentType<
+      React.PropsWithChildren<React.PropsWithChildren<T>>
+    >,
+  ) {
+    return function ErrorBoundaryWrapper(props: React.PropsWithChildren<T>) {
+      return (
+        <ErrorBoundary>
+          <WrappedComponent {...props} />
+        </ErrorBoundary>
+      );
+    };
+  }
+  
+  export default hasErrorBoundary;
